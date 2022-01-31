@@ -18,7 +18,7 @@ const ListerController = (
 
     try {
       //Check for email and full name
-      if (!email || !fullname || lister_type)
+      if (!email || !fullname || !lister_type)
         return res.status(442).json({
           status: "fail",
           message:
