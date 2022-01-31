@@ -104,4 +104,4 @@ Documentation: [Documentation](https://documenter.getpostman.com/view/7592361/UV
 ![Email already exist](./screenshots/already_registered_email.png)
 ![Successful registration](./screenshots/successful_signup_as_asset_lister.png)
 ![Recieved mail](./screenshots/received_mail.png)
-
+                                                                                                                                
