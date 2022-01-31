@@ -24,13 +24,16 @@ app.use(
   })
 );
 
+
 app.use("/api/v1/", listerRouter);
 
 app.use((req, res) => {
   log(req, res)
   res.status(404).json({
-    status: 'fail',
-    message: `Sorry!!!, can't find ${req.url}. Please visit /api/v1/home`,
+    status: "fail",
+    message: `Sorry!!!, can't find ${req.get("host")}${req.url}. Please visit ${req.get(
+      "host"
+    )}/api/v1/signup. METHOD: post. Kindly use a valid email address so that you can receive notification after signup`,
   });
 });
 

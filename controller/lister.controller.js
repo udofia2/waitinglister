@@ -1,4 +1,12 @@
-const ListerController = (AssetListerModel, InvestorModel, log) => {
+
+const ListerController = (
+  AssetListerModel,
+  InvestorModel,
+  Mail,
+  nodemailer,
+  nodemailerSendgrid,
+  log
+) => {
   const signup = async (req, res) => {
     log(req, res);
     const { email, fullname, first_name, surname, lister_type, description } =
@@ -18,7 +26,7 @@ const ListerController = (AssetListerModel, InvestorModel, log) => {
             "Please confirm that [ email ]  and [ fullname ] is provided",
         });
 
-        //Check that fullname has both first name and last name
+      //Check that fullname has both first name and last name
       const namechecker = fullname.trim().split(" ");
 
       if (namechecker.length < 2)
@@ -65,6 +73,9 @@ const ListerController = (AssetListerModel, InvestorModel, log) => {
           lister_type: lister_typeToLowerCase,
           description,
         });
+
+        Mail(req, lister, nodemailer,
+  nodemailerSendgrid,);
 
         await lister.save();
 
