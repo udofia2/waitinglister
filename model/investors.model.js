@@ -13,22 +13,16 @@ const investorSchema = mongoose.Schema(
         "The value of path {PATH} ({VALUE}) is not a valid email address.",
       ],
     },
-    first_name: {
+    fullname: {
       type: String,
       required: true,
+      trim: true
     },
     lister_type: {
-    type: String,
-    enum: {
-      values: ['Investors', 'Asset listers'],
-      message: '{VALUE} is not supported'
-    },
-    surname: {
       type: String,
-      required: true,
+      required: true
     },
   },
-},
   { timestamps: true }
 );
 

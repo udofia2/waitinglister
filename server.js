@@ -3,8 +3,15 @@ config();
 import log from "./config/logger.js";
 import express from "express";
 import cors from "cors";
+import listerRouter from './routes/lister.router.js'
+
+
+import db from './config/db_connection.js'
+
+db()
 
 const app = express();
+
 
 app.disable("x-powered-by");
 app.use(cors());
@@ -16,6 +23,8 @@ app.use(
     parameterLimit: 50000,
   })
 );
+
+app.use("/api/v1/", listerRouter);
 
 app.use((req, res) => {
   log(req, res)

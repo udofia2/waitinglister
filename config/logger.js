@@ -17,15 +17,15 @@ const log = logger({
     req: pino.stdSerializers.req,
     res: pino.stdSerializers.res,
   },
-
+  
   // Set to `false` to prevent standard serializers from being wrapped.
   wrapSerializers: true,
-
+  
   // Logger level is `info` by default
   useLevel: "info",
-
+  
   timestamp: () => `,"time":"${new Date(Date.now()).toISOString()}"`,
-
+  
   // Define a custom logger level
   // customLogLevel(res, err) {
   //   if (res.statusCode >= 400 && res.statusCode < 500) {

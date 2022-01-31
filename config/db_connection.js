@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import logger from './logger';
+// import logger from './logger.js';
 // import config from './config';
 
 /**
@@ -10,28 +10,28 @@ const connectDB = async () => {
 
   mongoose.set('autoIndex', true);
 
-  const con = await mongoose.connect(process.env.DB, {
+  const con = await mongoose.connect(process.env.DBProd, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     autoIndex: true,
   });
 
-  logger.info(`MongoDB Connected: ${con.connection.host}.`);
+  console.info(`MongoDB Connected: ${con.connection.host}.`);
 
   mongoose.connection.on('connecting', () => {
-    logger.info('Connecting to Database');
+    console.info("Connecting to Database");
   });
 
   mongoose.connection.on('connected', () => {
-    logger.info('Mongoose Connected to Database');
+    console.info("Mongoose Connected to Database");
   });
 
   mongoose.connection.on('error', (err) => {
-    logger.error(err.message);
+    console.error(err.message);
   });
 
   mongoose.connection.on('disconnected', () => {
-    logger.info('Mongoose Connection is Disconnected.');
+    console.info("Mongoose Connection is Disconnected.");
   });
 
   process.on('SIGINT', async () => {
