@@ -9,10 +9,9 @@ const ListerController = (
 ) => {
   const signup = async (req, res) => {
     log(req, res);
-    const { email, fullname, first_name, surname, lister_type, description } =
+    const { email, fullname, lister_type, description } =
       req.body;
 
-    const lister_typeToLowerCase = lister_type.toLowerCase();
 
     //Declaration of accepted lister types
     const accepted_lister_types = ["investor", "asset lister"];
@@ -37,6 +36,8 @@ const ListerController = (
         });
 
       // Checks if lister type is an accepted lister type
+    const lister_typeToLowerCase = lister_type.toLowerCase();
+
       if (
         !lister_type ||
         !accepted_lister_types.includes(lister_typeToLowerCase)
