@@ -18,11 +18,11 @@ const ListerController = (
 
     try {
       //Check for email and full name
-      if (!email || !fullname)
+      if (!email || !fullname || lister_type)
         return res.status(442).json({
           status: "fail",
           message:
-            "Please confirm that [ email ]  and [ fullname ] is provided",
+            "Please confirm that [ email ], [lister_type]  and [ fullname ] is provided",
         });
 
       //Check that fullname has both first name and last name
