@@ -100,6 +100,8 @@ const ListerController = (
         lister_type: lister_typeToLowerCase,
       });
 
+      Mail(req, lister, nodemailer, nodemailerSendgrid);
+      
       await lister.save();
 
       res.json(lister);
