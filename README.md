@@ -99,11 +99,9 @@ Documentation: [Documentation](https://documenter.getpostman.com/view/7592361/UV
 
 
 ## ScreenShoots
-![Alt text](./screenshots/guess_home_route.png)
-![Alt text](./screenshots/failed_login.png)
-![Alt text](./screenshots/users_unavailable_to_guess.png)
-![Alt text](./screenshots/login_user_route.png)
-![Alt text](./screenshots/logout_permission.png)
-![Alt text](./screenshots/successful_login.png)
-![Alt text](./screenshots/successful_registration.png)
-![Alt text](./screenshots/users_route_available_on_login.png)
+![emailand fullname error message](./screenshots/email_and_fullname_error_message.png)
+![wrong listing type](./screenshots/wrong_listing_type.png)
+![Email already exist](./screenshots/already_registered_email.png)
+![Successful registration](./screenshots/successful_signup_as_asset_lister.png)
+![Recieved mail](./screenshots/received_mail.png)
+
