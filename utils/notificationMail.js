@@ -1,5 +1,4 @@
 export default async (req, lister, nodemailer, nodemailerSendgrid) => {
-  console.log(process.env.SENDGRID_API_KEY);
   const transporter = nodemailer.createTransport(
     nodemailerSendgrid({
       apiKey: process.env.SENDGRID_API_KEY,
