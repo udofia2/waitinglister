@@ -80,6 +80,8 @@ const ListerController = (
 
         await lister.save();
 
+        console.log(lister)
+
         return res.json(lister);
       }
 
